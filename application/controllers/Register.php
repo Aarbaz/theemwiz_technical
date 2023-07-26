@@ -23,10 +23,7 @@ class Register extends CI_Controller
             
         $this->load->view('layouts/home');
     }
-   /*  function home()
-    {
-        $this->load->view('layouts/home');
-    } */
+
 
     function validation()
     {
@@ -43,6 +40,7 @@ class Register extends CI_Controller
                 'first_name' => $this->input->post('first_name'),
                 'last_name' => $this->input->post('last_name'),
                 'email' => $this->input->post('user_email'),
+                'user_phone' => $this->input->post('phone_number'),
                 'password' => $encrypted_password,
                 'verification_key' => $verification_key
             );
@@ -72,8 +70,8 @@ class Register extends CI_Controller
                 $this->email->subject($subject);
                 $this->email->message($message);
                 if ($this->email->send()) {
-                    $this->session->set_flashdata('message', 'Check in your email for email verification mail');
-                    redirect('register');
+                    echo 'Check in your email for email verification mail';
+                    redirect('Register');
                 }else {
                     // show_error($this->email->print_debugger());  
                     $this->session->set_flashdata('message', 'Mail Not sent'); 

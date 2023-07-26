@@ -29,10 +29,7 @@ require("partials/head.php");
                                 class="profile-img">
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="#">Profile</a></li>
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
+
                             <li><a class="dropdown-item" href="<?php echo base_url("Home/logout")?>">Logout</a></li>
                         </ul>
                     </li>
